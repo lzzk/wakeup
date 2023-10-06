@@ -12,7 +12,7 @@ https://t.me/c/1941649644/2798
 2. https://github.com/acheong08/BingImageCreator 参考这个项目拿到 bing 的 cookie, 但这里有个注意，不能用最新版需要 0.4.4, pip install BingImageCreator==0.4.4
 3. 拿到 tg 的 token, 去 Google 搜索，去问 ChatGPT 都可以，需要在 [botfather](https://t.me/BotFather) 那拿
 4. pip install -r requirements.txt
-5. python tg.py ${tg_token} ${bing_cookie} 启动
+5. python tg.py ${tg_token} ${bing_cookie_U} ${bing_cookie_KievRPSSecAuth} 启动
 
 ## Appreciation
 
