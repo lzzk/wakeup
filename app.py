@@ -23,7 +23,3 @@ def webhook():
     update = telebot.types.Update.de_json(request.stream.read().decode("utf-8"))
     bot.process_new_updates([update])
     return "ok", 200
-
-
-if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port=8088)
