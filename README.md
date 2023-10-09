@@ -19,3 +19,12 @@ https://t.me/c/1941649644/2798
 
 - Thank you, that's enough. Just enjoy it.
 
+https://tg-booooot.vercel.app/tg_webhook
+# https://api.telegram.org/bot6558579527:AAFyfN_-dqEZHT2dIkLCsQKvXkEemCKsJvI/setWebhook?url=https://tg-booooot.vercel.app/tg_webhook
+# https://api.telegram.org/bot6558579527:AAFyfN_-dqEZHT2dIkLCsQKvXkEemCKsJvI/getWebhookInfo
+
+
+https://a46f-143-198-154-127.ngrok-free.app/tg_webhook
+# https://api.telegram.org/bot6558579527:AAFyfN_-dqEZHT2dIkLCsQKvXkEemCKsJvI/setWebhook?url=https://4fec-165-232-167-5.ngrok-free.app/tg_webhook
+# https://api.telegram.org/bot6558579527:AAFyfN_-dqEZHT2dIkLCsQKvXkEemCKsJvI/getWebhookInfo
+

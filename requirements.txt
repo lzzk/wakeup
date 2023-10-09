@@ -1,4 +1,4 @@
 BingImageCreator==0.4.4
 pyTelegramBotAPI
 telebot~=0.0.5
-flask
+fastapi~=0.101.0
