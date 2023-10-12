@@ -12,9 +12,9 @@ class TelegramNotifier(Notifiable):
     bot: TeleBot
 
     def __init__(self):
-        if not token:
+        if not token or token == "":
             raise ValueError("TG_TOKEN env variable not set")
-        if not chat_id:
+        if not chat_id or chat_id == "":
             raise ValueError("TG_CHAT_ID env variable not set")
 
         self.token = token
