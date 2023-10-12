@@ -8,4 +8,4 @@ COPY . .
 RUN ls -la
 RUN pwd
 
-CMD ["python", "wakeup.py"]
+CMD ["python", "/app/wakeup.py"]
