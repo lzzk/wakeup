@@ -15,7 +15,15 @@ https://t.me/c/1941649644/2798
 4. pip install -r requirements.txt
 5. python tg.py ${tg_token} ${bing_cookie_U} ${bing_cookie_KievRPSSecAuth} 启动
 
+
+## Environments
+
+- BING_AUTH_TOKEN
+- BING_AUTH_TOKEN_KIEV(optional)
+- TG_TOKEN
+- TG_CHAT_ID
+
+
 ## Appreciation
 
 - Thank you, that's enough. Just enjoy it.
-

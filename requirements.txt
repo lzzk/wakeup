@@ -1,4 +1,5 @@
 BingImageCreator==0.4.4
 pyTelegramBotAPI
 telebot~=0.0.5
-fastapi~=0.101.0
+requests~=2.31.0
+pyweathercn
