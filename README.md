@@ -1,21 +1,22 @@
-# Wakeup Bot 
+# Wekeup Bot 
+
 
 todo
 
 ## Basic Usage
 
 ```yaml
-name: wakeuppppp
+name: wekeuppppp
 
 on:
   workflow_dispatch:
 
 jobs:
   wakeup:
-    name: wakeup bot
+    name: wekeup bot
     runs-on: ubuntu-latest
     steps:
-      - name: Wakeup
+      - name: Wekeup
         uses: godruoyi/wekeup@main
         with:
           bing_auth_token: ${{ secrets.BING_AUTH_TOKEN }}
