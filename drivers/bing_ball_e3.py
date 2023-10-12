@@ -16,6 +16,10 @@ class BingBallE3Driver(Driver):
     def generate_images(self, text: str):
         print("bing_ball_e3 generate_image", text)
 
+        # test
+        print("test chat-id", os.getenv("TG_CHAT_ID"))
+        print("test city", os.getenv("CITY"))
+
         all_cookies = []
         if bing_cookie_kiev:
             print("using kiev cookie")
