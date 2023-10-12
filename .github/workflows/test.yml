@@ -22,3 +22,4 @@ jobs:
           BING_AUTH_TOKEN_KIEV: ${{ env.BING_AUTH_TOKEN_KIEV }}
           TG_TOKEN: ${{ env.TG_TOKEN }}
           TG_CHAT_ID: ${{ env.TG_CHAT_ID }}
+          CITY: ${{ env.CITY }}

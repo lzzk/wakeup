@@ -9,6 +9,8 @@ bing_cookie_kiev = os.getenv('BING_AUTH_TOKEN_KIEV')
 
 class BingBallE3Driver(Driver):
     def __init__(self):
+        if bing_cookie_u is None:
+            raise ValueError("BING_AUTH_TOKEN env variable not set")
         pass
 
     def generate_images(self, text: str):
