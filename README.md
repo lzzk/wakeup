@@ -18,6 +18,7 @@ https://t.me/c/1941649644/2798
 
 ## Environments
 
+- CITY
 - BING_AUTH_TOKEN
 - BING_AUTH_TOKEN_KIEV(optional)
 - TG_TOKEN
