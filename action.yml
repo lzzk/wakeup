@@ -1,0 +1,38 @@
+name: "wakeup bot"
+description: "Use AI to create admirable images to surprise your every morning"
+
+inputs:
+  tg_token:
+    description: "Telegram Bot Token"
+    required: false
+
+  tg_chat_id:
+    description: "Telegram Chat ID"
+    required: false
+
+  weather_city:
+    description: "City for weather"
+    default: '重庆'
+    required: false
+
+  bing_auth_token:
+    description: "Bing Auth Cookie (_U)"
+    required: true
+
+  bing_auth_token_kiev:
+    description: "(optional) Bing Auth Cookie (Kiev)"
+    required: false
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  env:
+    BING_AUTH_TOKEN: ${{ inputs.bing_auth_token }}
+    BING_AUTH_TOKEN_KIEV: ${{ inputs.bing_auth_token_kiev }}
+    TG_TOKEN: ${{ inputs.tg_token }}
+    TG_CHAT_ID: ${{ inputs.tg_chat_id }}
+    CITY: ${{ inputs.weather_city }}
+
+branding:
+  icon: 'package'
+  color: 'purple'
