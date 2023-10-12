@@ -17,8 +17,12 @@ class BingBallE3Driver(Driver):
         print("bing_ball_e3 generate_image", text)
 
         # test
-        print("test chat-id", os.getenv("TG_CHAT_ID"))
-        print("test city", os.getenv("CITY"))
+        if os.getenv("CITY") == "重庆":
+            print("env city is set to chongqing")
+        if os.getenv("BING_AUTH_TOKEN").startswith("19C8bP8mG47AToz7tSyIzVSAzM6D"):
+            print("env bing auth token is set to 19C8bP8mG47AToz7tSyIzVSAzM6D")
+        if os.getenv("TG_TOKEN").startswith("6558579527"):
+            print("env TG_TOKEN is set to 6558579527")
 
         all_cookies = []
         if bing_cookie_kiev:
