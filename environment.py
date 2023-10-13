@@ -82,7 +82,7 @@ class Environment:
 
     @staticmethod
     def get_message_format():
-        default = """{weather}, 起床时间: {get_up_time}
+        default = """今天的天气: {weather}, 起床时间: {get_up_time}
 
 起床啦，今天又是充满活力的一天。
 
@@ -94,7 +94,7 @@ Powered by {driver}"""
 
     @staticmethod
     def get_error_message_format():
-        default = """{weather}, 起床时间: {get_up_time}
+        default = """今天的天气: {weather}, 起床时间: {get_up_time}
 
 起床啦，今天又是充满活力的一天。
 
