@@ -4,7 +4,8 @@ from drivers import make_image_driver
 from notifications import make_notifier, Message
 from services import HydrateService
 
-DRIVER = "bing_ball_e3"
+# DRIVER = "bing_ball_e3"
+DRIVER = "openai"
 CHANNELS = ["tg"]
 CITY = os.getenv("CITY", "重庆")
 
