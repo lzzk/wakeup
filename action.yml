@@ -23,6 +23,47 @@ inputs:
     description: "(optional) Bing Auth Cookie (Kiev)"
     required: false
 
+  openai_api_base:
+    description: "OpenAI API Base"
+    required: false
+
+  openai_api_type:
+    description: "OpenAI API Type"
+    required: false
+
+  openai_api_version:
+    description: "OpenAI API Version"
+    required: false
+
+  openai_api_key:
+    description: "OpenAI API Key"
+    required: false
+
+  channels:
+    description: "Channels"
+    default: 'tg'
+    required: false
+
+  drivers:
+    description: "Image drivers"
+    default: 'openai'
+    required: false
+
+  send_error:
+    description: "Send error"
+    default: 'false'
+    required: false
+
+  message_format:
+    description: "Message format"
+    default: '{weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，今天又是充满活力的一天。\r\n\r\n今日诗句: {sentence}\r\n\r\nPowered by {driver}'
+    required: false
+
+  error_message_format:
+    description: "Error message format"
+    default: '{weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，今天又是充满活力的一天。\r\n\r\n今日诗句: {sentence}\r\n\r\n生成图片失败: {error}, Driver: {driver}'
+    required: false
+
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -32,14 +73,15 @@ runs:
     TG_TOKEN: ${{ inputs.tg_token }}
     TG_CHAT_ID: ${{ inputs.tg_chat_id }}
     CITY: ${{ inputs.weather_city }}
-    OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
-    OPENAI_API_TYPE: ${{ secrets.OPENAI_API_TYPE }}
-    OPENAI_API_VERSION: ${{ secrets.OPENAI_API_VERSION }}
-    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-    CHANNELS: "tg"
-    SEND_ERROR: "false"
-    MESSAGE_FORMAT: ${{ secrets.MESSAGE_FORMAT }}
-    ERROR_MESSAGE_FORMAT: ${{ secrets.ERROR_MESSAGE_FORMAT }}
+    OPENAI_API_BASE: ${{ inputs.openai_api_base }}
+    OPENAI_API_TYPE: ${{ inputs.openai_api_type }}
+    OPENAI_API_VERSION: ${{ inputs.openai_api_version }}
+    OPENAI_API_KEY: ${{ inputs.openai_api_key }}
+    CHANNELS: ${{ inputs.channels }}
+    DRIVERS: ${{ inputs.drivers }}
+    SEND_ERROR: ${{ inputs.send_error }}
+    MESSAGE_FORMAT: ${{ inputs.message_format }}
+    ERROR_MESSAGE_FORMAT: ${{ inputs.error_message_format }}
 
 branding:
   icon: 'package'

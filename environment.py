@@ -33,8 +33,8 @@ class Environment:
     # {error} - error message
     # {driver} - generator driver, e.g. openai, bing_ball_e3
     # {channel} - notification channel, e.g. tg, telegram, slack
-    MESSAGE_FORMAT - Message format, default: `今天的起床时间是--{get_up_time}.\r\n\r\n 今天的一句诗:\r\n {sentence} \r\n`
-    ERROR_MESSAGE_FORMAT - Error message format, default: `get an error: {error}`
+    MESSAGE_FORMAT - Message format
+    ERROR_MESSAGE_FORMAT - Error message format
     """
     @staticmethod
     def get_city():
