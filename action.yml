@@ -56,12 +56,10 @@ inputs:
 
   message_format:
     description: "Message format"
-    default: '{weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，今天又是充满活力的一天。\r\n\r\n今日诗句: {sentence}\r\n\r\nPowered by {driver}'
     required: false
 
   error_message_format:
     description: "Error message format"
-    default: '{weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，今天又是充满活力的一天。\r\n\r\n今日诗句: {sentence}\r\n\r\n生成图片失败: {error}, Driver: {driver}'
     required: false
 
 runs:
