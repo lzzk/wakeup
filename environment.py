@@ -38,47 +38,47 @@ class Environment:
     """
     @staticmethod
     def get_city():
-        return os.getenv("CITY", "重庆")
+        return Environment.get_env("CITY", "重庆")
 
     @staticmethod
     def get_bing_auth_token():
-        return os.getenv("BING_AUTH_TOKEN")
+        return Environment.get_env("BING_AUTH_TOKEN")
 
     @staticmethod
     def get_bing_auth_token_kiev():
-        return os.getenv("BING_AUTH_TOKEN_KIEV")
+        return Environment.get_env("BING_AUTH_TOKEN_KIEV")
 
     @staticmethod
     def get_openai_api_base():
-        return os.getenv("OPENAI_API_BASE", "https://api.openai.com/v1")
+        return Environment.get_env("OPENAI_API_BASE", "https://api.openai.com/v1")
 
     @staticmethod
     def get_openai_api_type():
-        return os.getenv("OPENAI_API_TYPE", "open_ai")
+        return Environment.get_env("OPENAI_API_TYPE", "open_ai")
 
     @staticmethod
     def get_openai_api_version():
-        return os.getenv("OPENAI_API_VERSION")
+        return Environment.get_env("OPENAI_API_VERSION")
 
     @staticmethod
     def get_openai_api_key():
-        return os.getenv("OPENAI_API_KEY")
+        return Environment.get_env("OPENAI_API_KEY")
 
     @staticmethod
     def get_tg_token():
-        return os.getenv("TG_TOKEN")
+        return Environment.get_env("TG_TOKEN")
 
     @staticmethod
     def get_tg_chat_id():
-        return os.getenv("TG_CHAT_ID")
+        return Environment.get_env("TG_CHAT_ID")
 
     @staticmethod
     def get_channels():
-        return os.getenv("CHANNELS", "tg").split(",")
+        return Environment.get_env("CHANNELS", "tg").split(",")
 
     @staticmethod
     def send_error():
-        return os.getenv("SEND_ERROR", "false") == "true"
+        return Environment.get_env("SEND_ERROR", "false") == "true"
 
     @staticmethod
     def get_message_format():
@@ -90,7 +90,7 @@ class Environment:
 
 Powered by {driver}"""
 
-        return os.getenv("MESSAGE_FORMAT", default)
+        return Environment.get_env("MESSAGE_FORMAT", default)
 
     @staticmethod
     def get_error_message_format():
@@ -101,11 +101,18 @@ Powered by {driver}"""
 今日诗句: {sentence}
 
 生成图片失败: {error}, Driver: {driver}"""
-        return os.getenv("ERROR_MESSAGE_FORMAT", default)
+        return Environment.get_env("ERROR_MESSAGE_FORMAT", default)
 
     @staticmethod
     def get_drivers():
-        return os.getenv("DRIVERS", "openai").split(",")
+        return Environment.get_env("DRIVERS", "openai").split(",")
+
+    @staticmethod
+    def get_env(key: str, default: str = None):
+        v = os.getenv(key)
+        if v is None or v == "":
+            return default
+        return v
 
 
 
