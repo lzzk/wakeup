@@ -1,27 +1,24 @@
-import os
-
 from BingImageCreator import ImageGen
 from .driver import Driver
-
-bing_cookie_u = os.getenv('BING_AUTH_TOKEN')
-bing_cookie_kiev = os.getenv('BING_AUTH_TOKEN_KIEV')
+from environment import Environment
 
 
 class BingBallE3Driver(Driver):
+    auth_token: str = Environment.get_bing_auth_token()
+    auth_token_kiev: str = Environment.get_bing_auth_token_kiev()
+
     def __init__(self):
-        if bing_cookie_u is None or bing_cookie_u == "":
+        if self.auth_token is None or self.auth_token == "":
             raise ValueError("BING_AUTH_TOKEN env variable not set")
         pass
 
     def generate_images(self, text: str):
-        print("bing_ball_e3 generate_image", text)
-
         all_cookies = []
-        if bing_cookie_kiev:
+        if self.auth_token_kiev is not None and self.auth_token_kiev != "":
             print("using kiev cookie")
-            all_cookies = [{"name": "KievRPSSecAuth", "value": bing_cookie_kiev}]
+            all_cookies = [{"name": "KievRPSSecAuth", "value": self.auth_token_kiev}]
 
-        i = ImageGen(auth_cookie=bing_cookie_u, all_cookies=all_cookies)
+        i = ImageGen(auth_cookie=self.auth_token, all_cookies=all_cookies)
         try:
             images = i.get_images(text)
             datas = []

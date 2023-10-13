@@ -32,6 +32,14 @@ runs:
     TG_TOKEN: ${{ inputs.tg_token }}
     TG_CHAT_ID: ${{ inputs.tg_chat_id }}
     CITY: ${{ inputs.weather_city }}
+    OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
+    OPENAI_API_TYPE: ${{ secrets.OPENAI_API_TYPE }}
+    OPENAI_API_VERSION: ${{ secrets.OPENAI_API_VERSION }}
+    OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+    CHANNELS: "tg"
+    SEND_ERROR: "false"
+    MESSAGE_FORMAT: ${{ secrets.MESSAGE_FORMAT }}
+    ERROR_MESSAGE_FORMAT: ${{ secrets.ERROR_MESSAGE_FORMAT }}
 
 branding:
   icon: 'package'

@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
 
 DRIVER_BING_BALL_E3 = "bing_ball_e3"
-DRIVER_BAIDU = "baidu"
 DRIVER_OPENAI = "openai"
 
 

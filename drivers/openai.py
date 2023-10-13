@@ -2,21 +2,18 @@ import openai
 import requests
 
 from .driver import Driver
-
-# Available env variables, see python openai package for more info
-# OPENAI_API_BASE: https://api.openai.com/v1
-# OPENAI_API_TYPE: open_ai
-# OPENAI_API_VERSION: None
-# OPENAI_API_KEY: None
+from environment import Environment
 
 
 class OpenAIDriver(Driver):
     def __init__(self):
+        openai.api_type = Environment.get_openai_api_type()
+        openai.api_base = Environment.get_openai_api_base()
+        openai.api_version = Environment.get_openai_api_version()
+        openai.api_key = Environment.get_openai_api_key()
         pass
 
     def generate_images(self, text: str):
-        print("generate image using openai", text)
-
         response = openai.Image.create(
             prompt=text,
             size='1024x1024',
