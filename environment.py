@@ -5,7 +5,7 @@ class Environment:
     """
     Environment variables:
 
-    CITY - get weather for this city, default: 重庆
+    CITY - get weather for this city, default: chongqing
 
     # bing dall e3 image engine, not working now
     BING_AUTH_TOKEN - Bing Image Search API token
@@ -38,7 +38,7 @@ class Environment:
     """
     @staticmethod
     def get_city():
-        return Environment.get_env("CITY", "重庆")
+        return Environment.get_env("CITY", "chongqing")
 
     @staticmethod
     def get_bing_auth_token():

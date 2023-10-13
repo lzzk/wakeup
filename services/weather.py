@@ -36,6 +36,3 @@ def get_weather2(city: str):
         first_current_condition['humidity'],
     )
 
-
-if __name__ == '__main__':
-    print(get_weather2('重庆'))

@@ -12,7 +12,7 @@ inputs:
 
   weather_city:
     description: "City for weather"
-    default: '重庆'
+    default: 'chongqing'
     required: false
 
   bing_auth_token:
