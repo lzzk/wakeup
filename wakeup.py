@@ -8,9 +8,9 @@ if __name__ == '__main__':
     service = HydrateService()
     sentence = service.random_sentence()
     weather = service.get_weather(Environment.get_city())
-    message = Message(weather=weather, sentence=sentence)
 
     for d in Environment.get_drivers():
+        message = Message(weather=weather, sentence=sentence)
         message.driver = d
         print("generating images for driver {}, sentence: {}".format(d, sentence))
 
