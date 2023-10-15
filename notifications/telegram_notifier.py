@@ -29,8 +29,6 @@ class TelegramNotifier(Notifiable):
             self.bot.send_message(self.chat_id, m)
             return
 
-        # todo: Investigate is there are possible to send multiple images in one message with caption
-        # media = [types.InputMediaPhoto(image, caption=message.sentence) for image in message.images]
-        # self.bot.send_media_group(chat_id, media=media)
-
-        self.bot.send_photo(self.chat_id, photo=message.images[0], caption=m)
+        media = [types.InputMediaPhoto(image) for image in message.images]
+        media[0].caption = m
+        self.bot.send_media_group(self.chat_id, media=media)
