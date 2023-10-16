@@ -24,6 +24,9 @@ class Environment:
     TG_TOKEN - Telegram bot token
     TG_CHAT_ID - Telegram chat id, required when
 
+    SLACK_TOKEN - Slack bot token
+    SLACK_CHAT_ID - Slack chat id
+
     SEND_ERROR - Send error message to channel, default: false
 
     # message format, available variables:
@@ -106,6 +109,14 @@ Powered by {driver}"""
     @staticmethod
     def get_drivers():
         return Environment.get_env("DRIVERS", "openai").split(",")
+
+    @staticmethod
+    def get_slack_token():
+        return Environment.get_env("SLACK_TOKEN")
+
+    @staticmethod
+    def get_slack_chat_id():
+        return Environment.get_env("SLACK_CHAT_ID")
 
     @staticmethod
     def get_env(key: str, default: str = None):

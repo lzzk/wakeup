@@ -4,12 +4,16 @@ from abc import ABC, abstractmethod
 from environment import Environment
 
 NOTIFIER_TG = "tg"
+NOTIFIER_SLACK = "slack"
 
 
 def make_notifier(notifier: str):
     if notifier == NOTIFIER_TG:
         from .telegram_notifier import TelegramNotifier
         return TelegramNotifier()
+    if notifier == NOTIFIER_SLACK:
+        from .slack_notifier import SlackNotifier
+        return SlackNotifier()
     else:
         raise ValueError(f'unknown notifier {notifier}')
 
