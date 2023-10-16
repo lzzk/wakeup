@@ -10,6 +10,14 @@ inputs:
     description: "Telegram Chat ID"
     required: false
 
+  slack_token:
+    description: "Slack Bot Token"
+    required: false
+
+  slack_chat_id:
+    description: "Slack Chat ID"
+    required: false
+
   weather_city:
     description: "City for weather"
     default: 'chongqing'
@@ -70,6 +78,8 @@ runs:
     BING_AUTH_TOKEN_KIEV: ${{ inputs.bing_auth_token_kiev }}
     TG_TOKEN: ${{ inputs.tg_token }}
     TG_CHAT_ID: ${{ inputs.tg_chat_id }}
+    SLACK_TOKEN: ${{ inputs.slack_token }}
+    SLACK_CHAT_ID: ${{ inputs.slack_chat_id }}
     CITY: ${{ inputs.weather_city }}
     OPENAI_API_BASE: ${{ inputs.openai_api_base }}
     OPENAI_API_TYPE: ${{ inputs.openai_api_type }}
