@@ -97,13 +97,7 @@ Powered by {driver}"""
 
     @staticmethod
     def get_error_message_format():
-        default = """今天的天气: {weather}, 起床时间: {get_up_time}
-
-起床啦，今天又是充满活力的一天。
-
-今日诗句: {sentence}
-
-生成图片失败: {error}, Driver: {driver}"""
+        default = """error: : {error}, driver: {driver}"""
         return Environment.get_env("ERROR_MESSAGE_FORMAT", default)
 
     @staticmethod
