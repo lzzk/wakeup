@@ -1,0 +1,41 @@
+name: wakeUpBot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  wakeup:
+    name: wakeup bot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wakeup
+        uses: lzzk/wakeup@main
+        with:
+          drivers: "bing_ball_e3" # "bing_ball_e3,openai"
+          channels: "tg"       # "slack,tg"
+
+          weather_city: "haidian"
+
+          # telegram bot config
+          tg_token: ${{ secrets.TG_TOKEN }}
+          tg_chat_id: "-1002002109011"
+
+          # slack_token: ${{ secrets.SLACK_TOKEN }}
+          # slack_chat_id: "C0616U4LYHZ"
+
+          # openai azure api config
+          openai_api_base: "https://godruoyi-openai-azure.openai.azure.com/"
+          openai_api_type: "azure"
+          openai_api_version: "2023-06-01-preview"
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+
+          # bing auth token
+          bing_auth_token: ${{ secrets.BING_AUTH_TOKEN }}
+          bing_auth_token_kiev: ${{ secrets.BING_AUTH_TOKEN_KIEV }}
+
+          # send error message when occur error
+          send_error: "true"
+
+          message_format: "今天的天气: {weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，今天又是充满活力的一天，醒醒，起床啦。\r\n\r\n今日诗句: {sentence}\r\n\r\nPowered by {driver}"
+          error_message_format: "今天的天气: {weather}, 起床时间: {get_up_time}\r\n\r\n起床啦，虽然图片生成失败了，但今天依然是充满活力的一天，。\r\n\r\n今日诗句: {sentence}\r\n\r\n生成图片失败: {error} Driver: {driver}"
+
