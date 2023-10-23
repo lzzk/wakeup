@@ -11,14 +11,14 @@ jobs:
       - name: Wakeup
         uses: lzzk/wakeup@main
         with:
-          drivers: "bing_ball_e3" # "bing_ball_e3,openai"
+          drivers: "bing_dalle3" # "bing_dalle3,openai"
           channels: "tg"       # "slack,tg"
 
           weather_city: "haidian"
 
           # telegram bot config
           tg_token: ${{ secrets.TG_TOKEN }}
-          tg_chat_id: "-1002002109011"
+          tg_chat_id: ${{ secrets.TG_CHAT_ID }}
 
           # slack_token: ${{ secrets.SLACK_TOKEN }}
           # slack_chat_id: "C0616U4LYHZ"
