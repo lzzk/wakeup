@@ -34,14 +34,14 @@ class Environment:
     # {sentence} - today's sentence
     # {get_up_time} - get up time
     # {error} - error message
-    # {driver} - generator driver, e.g. openai, bing_ball_e3
+    # {driver} - generator driver, e.g. openai, bing_dall_e3
     # {channel} - notification channel, e.g. tg, telegram, slack
     MESSAGE_FORMAT - Message format
     ERROR_MESSAGE_FORMAT - Error message format
     """
     @staticmethod
     def get_city():
-        return Environment.get_env("CITY", "chongqing")
+        return Environment.get_env("CITY", "haidian")
 
     @staticmethod
     def get_bing_auth_token():
